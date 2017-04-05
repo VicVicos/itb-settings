@@ -19,6 +19,11 @@ function add_plugin_page(){
 	add_options_page( 'Настройки Темы', 'Настройки Темы', 'manage_options', 'itb_settings', 'itb_options_page_output' );
 }
 
+function get_option_theme ($option) {
+    $theme_option = get_option('option_theme');
+    return html_entity_decode($theme_option[$option]);
+}
+
 function itb_options_page_output(){
 	?>
 	<div class="wrap">
